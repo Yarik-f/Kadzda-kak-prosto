@@ -3,26 +3,32 @@ import './App.css';
 import Accordion from "./components/Accordion/Accordion";
 import Rating from "./components/Rating/Rating";
 import OnOff from "./components/OnOff/OnOff";
+import UnControlledAccordion from "./components/UnControlledAccordion/UnControlledAccordion";
 
 
 function App() {
+
+
     console.log('App rendering')
     return (
         <div>
-            <PageTitle title={"This is APP component"}/>
+            {/*<PageTitle title={"This is APP component"}/>
             <PageTitle title={"My friends"}/>
             Article 1
-            <Rating value={3}/>
-            <Accordion titleValue={'Menu'} collapsed={true}/>
-            <Accordion titleValue={'List'} collapsed={false}/>
-            Article 2
+            <Rating value={3}/>*/}
+            {/*<Accordion titleValue={'Menu'} collapsed={true}/>
+            <Accordion titleValue={'List'} collapsed={false}/>*/}
+
+            <UnControlledAccordion titleValue={'Menu'}/>
+            <UnControlledAccordion titleValue={'List'}/>
+            {/*Article 2
             <Rating value={0}/>
             <Rating value={1}/>
             <Rating value={2}/>
             <Rating value={3}/>
             <Rating value={4}/>
             <Rating value={5}/>
-            <OnOff color={true}/>
+            <OnOff/>*/}
         </div>
     );
 }
@@ -30,6 +36,7 @@ function App() {
 type PageTitle = {
     title: string
 }
+
 function PageTitle(props: PageTitle) {
     console.log('PageTitle rendering')
     return (
@@ -38,7 +45,6 @@ function PageTitle(props: PageTitle) {
         </h1>
     )
 }
-
 
 
 export default App;

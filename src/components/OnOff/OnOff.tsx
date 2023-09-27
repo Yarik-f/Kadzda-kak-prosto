@@ -1,33 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './OnOff.css'
 
-type OnOffType = {
-    color: boolean
-}
-type OnOffBodyType = {
-    bgOn: string
-    bgOff: string
-    span: boolean
-}
 
-const OnOff = (props: OnOffType) => {
-    return (
-        <div>
-            {!props.color && <OnOffBody bgOn={'none'} bgOff={'red'} span={true}/>}
-            {props.color && <OnOffBody bgOn={'green'} bgOff={'none'} span={false}/>}
-        </div>
-    );
-};
+const OnOff = () => {
+    const [on, setOn] = useState(false)
 
-function OnOffBody(props: OnOffBodyType) {
     return (
-        <div  className={'onoff'}>
-            <div style={{backgroundColor: props.bgOn}}>On</div>
-            <div style={{backgroundColor: props.bgOff}}>Off</div>
-            {!props.span && <span style={{backgroundColor: props.bgOn}}></span>}
-            {props.span && <span style={{backgroundColor: props.bgOff}}></span>}
+        <div className={'onoff'}>
+            <div onClick={() => {
+                setOn(true)
+            }} style={{backgroundColor: on ? 'green' : 'white'}}>On
+            </div>
+            <div onClick={() => {
+                setOn(false)
+            }} style={{backgroundColor: on ? 'white' : 'red'}}>Off
+            </div>
+            <span style={{backgroundColor: on ? 'green' : 'red'}}></span>
         </div>
     )
-}
-
+};
 export default OnOff;
