@@ -30,5 +30,5 @@ export const AccordionToggle = () => {
                 title: 'egor',
                 value: 3
             }
-        ]} titleValue={'hello'} collapsed={collapsed} onClick={callback} onChange={onClick}/>
+        ]} titleValue={'hello'} collapsed={collapsed} onClick={onClick}/>
 }
